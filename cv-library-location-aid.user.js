@@ -19,5 +19,4 @@ var googleMapsUrl = new URL('https://www.google.com/maps/search/')
 googleMapsUrl.searchParams.append('api', 1)
 googleMapsUrl.searchParams.append('query', locationText)
 
-console.log(firstAndOnlyResult)
 firstAndOnlyResult.innerHTML = '<a href="'+googleMapsUrl.href+'">'+locationText+'</a>'
