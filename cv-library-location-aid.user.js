@@ -8,6 +8,7 @@
 // @downloadURL https://raw.githubusercontent.com/Axeia/cv-library-location-aid/main/cv-library-location-aid.js
 // @installURL 	https://raw.githubusercontent.com/Axeia/cv-library-location-aid/main/cv-library-location-aid.js
 // @homepageURL	https://github.com/Axeia/cv-library-location-aid/
+// @license			MIT
 // ==/UserScript==
 
 var xpathResult = document.evaluate("//header[@class='job__header']//dd[@data-jd-location]", document.body)
@@ -19,4 +20,5 @@ var googleMapsUrl = new URL('https://www.google.com/maps/search/')
 googleMapsUrl.searchParams.append('api', 1)
 googleMapsUrl.searchParams.append('query', locationText)
 
+console.log(firstAndOnlyResult)
 firstAndOnlyResult.innerHTML = '<a href="'+googleMapsUrl.href+'">'+locationText+'</a>'
